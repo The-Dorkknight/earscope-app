@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tmu Ear Violator 4000 Streamer</title>
+<meta name="description" content="Free viewer for cheap HNDEC WiFi ear cameras. No vendor app, no trackers. Android, Windows, macOS and Linux.">
+<meta name="author" content="Matthew Armstrong">
+<meta property="og:title" content="Tmu Ear Violator 4000 Streamer">
+<meta property="og:description" content="Use your cheap WiFi ear camera without the vendor app. Free, no trackers.">
+<meta property="og:image" content="images/icon-512.png">
+<link rel="icon" type="image/png" href="images/favicon-64.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<style>
+:root{
+  --bg:#0e1013;--bg2:#15181d;--card:#1a1e24;--line:#2a2f37;
+  --fg:#e8eaed;--mut:#9aa1ab;--acc:#4fd1c5;--acc-ink:#0b2b28;--warn:#f5b041;
+  --radius:14px;color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f7f9;--bg2:#eef0f3;--card:#ffffff;--line:#dde1e6;
+    --fg:#15181d;--mut:#5b6470;--acc:#0f9488;--acc-ink:#ffffff;--warn:#b7791f;color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#f6f7f9;--bg2:#eef0f3;--card:#ffffff;--line:#dde1e6;
+  --fg:#15181d;--mut:#5b6470;--acc:#0f9488;--acc-ink:#ffffff;--warn:#b7791f;color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif}
+a{color:var(--acc)}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h1{font-size:clamp(30px,5.5vw,52px);line-height:1.08;margin:0 0 14px;letter-spacing:-.02em}
+h1 small{display:block;font-size:.45em;font-weight:500;color:var(--mut);letter-spacing:0;margin-top:8px}
+h2{font-size:clamp(22px,3vw,30px);margin:0 0 20px;letter-spacing:-.01em}
+h3{font-size:17px;margin:0 0 6px}
+p{margin:0 0 14px}
+.mut{color:var(--mut)}
+code,pre{font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+code{background:var(--bg2);padding:2px 6px;border-radius:6px}
+pre{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:0 0 14px}
+pre code{background:none;padding:0}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:56px 0 48px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.badge{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 11px;color:var(--mut);background:var(--bg2)}
+.lead{font-size:19px;color:var(--mut);max-width:34em}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;
+  border:1px solid var(--line);color:var(--fg);background:var(--card)}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.btn:hover{filter:brightness(1.08)}
+.appicon{width:112px;height:112px;border-radius:26px;margin:0 0 18px;filter:drop-shadow(0 8px 18px rgba(0,0,0,.45))}
+.phone{justify-self:center;width:min(300px,100%);border-radius:28px;border:8px solid #22262d;box-shadow:0 20px 60px #0008;overflow:hidden;background:#000}
+
+/* grids */
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card p:last-child{margin:0}
+.ico{font-size:22px;margin-bottom:6px;display:block}
+.shots{display:grid;gap:16px;grid-template-columns:2fr 1fr;align-items:start}
+figure{margin:0}
+figure img{border-radius:12px;border:1px solid var(--line);background:#000}
+figcaption{font-size:14px;color:var(--mut);margin-top:8px}
+.gallery{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.gallery figure img{aspect-ratio:4/3;object-fit:cover;width:100%}
+
+/* steps */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 14px}
+.steps li{counter-increment:s;position:relative;padding:0 0 12px 38px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;
+  background:var(--acc);color:var(--acc-ink);font-weight:700;font-size:14px;display:grid;place-items:center}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+td,th{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-weight:600;width:32%}
+.note{border-left:4px solid var(--warn);background:var(--bg2);padding:14px 18px;border-radius:0 10px 10px 0}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--mut);font-size:14px}
+footer p{margin:0 0 6px}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:36px}
+  .phone{width:min(260px,80%)}
+  .shots{grid-template-columns:1fr}
+  section{padding:40px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="badges">
+        <span class="badge">Source-available · Non-commercial</span>
+        <span class="badge">No trackers</span>
+        <span class="badge">Android · Windows · macOS · Linux</span>
+      </div>
+      <img class="appicon" src="images/icon-512.png" alt="" width="112" height="112">
+      <h1>Tmu Ear Violator 4000<small>Streamer</small></h1>
+      <p class="lead">Use your cheap WiFi ear camera without the vendor app.
+        One small, readable program (source-available, free for non-commercial use) that shows the live picture on your phone or computer
+        and never talks to the internet.</p>
+      <div class="btns">
+        <a class="btn pri" data-link="releases" href="#install">⬇ Download for Android</a>
+        <a class="btn" href="#desktop">💻 Run on a computer</a>
+        <a class="btn" data-link="repo" href="#">⌥ Source code</a>
+      </div>
+    </div>
+    <img class="phone" src="images/gui-phone.webp" alt="The viewer on a phone, showing a live picture with Auto-level, Mirror, Zoom, Snapshot and Record controls" width="400" height="840">
+  </header>
+</div>
+
+<!-- Your own photos: drop files with these names into docs/images/ and they appear.
+     Missing files are hidden automatically, so the page still looks right without them. -->
+<section id="device" class="photos" hidden>
+  <div class="wrap">
+    <h2>The hardware</h2>
+    <p class="mut">One of the many WiFi ear cameras that broadcast an <code>HNDEC-xxxxxx</code> network
+      and normally need the "SL ylz" app.</p>
+    <div class="gallery">
+      <figure><img src="images/unit.jpg" alt="The ear camera"><figcaption>The scope</figcaption></figure>
+      <figure><img src="images/unit-2.jpg" alt="The ear camera, another angle"><figcaption>Tip and light ring</figcaption></figure>
+      <figure><img src="images/real-feed.jpg" alt="A real picture from the scope in the viewer"><figcaption>A real picture in the viewer</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card"><span class="ico">🔒</span><h3>No vendor app</h3>
+        <p class="mut">No trackers, ads, analytics or accounts. The Android app asks for network access only.</p></div>
+      <div class="card"><span class="ico">🔎</span><h3>Finds your scope</h3>
+        <p class="mut">Speaks both known protocols, NE3 and NE7, and detects which one your scope uses.</p></div>
+      <div class="card"><span class="ico">🧭</span><h3>Auto-level</h3>
+        <p class="mut">Uses the scope's built-in tilt sensor to keep the picture the right way up.</p></div>
+      <div class="card"><span class="ico">📸</span><h3>Snapshots and video</h3>
+        <p class="mut">Full camera resolution, fullscreen mode, and Square and Circle views. Save stills and recordings.</p></div>
+      <div class="card"><span class="ico">🩺</span><h3>Built-in diagnostics</h3>
+        <p class="mut">A Log panel with one-click network tests, Reconnect and Restart buttons.</p></div>
+      <div class="card"><span class="ico">🪶</span><h3>Tiny</h3>
+        <p class="mut">The desktop version is one Python file with no dependencies to install.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="screens">
+  <div class="wrap">
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <figure><img src="images/gui-desktop.webp" alt="The viewer in a desktop browser" loading="lazy" width="1280" height="800">
+        <figcaption>On a computer. Shown with a test pattern in place of a real ear.</figcaption></figure>
+      <figure><img src="images/gui-log.webp" alt="The Log panel after running diagnostics" loading="lazy" width="400" height="840">
+        <figcaption>The Log panel after running diagnostics.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Get started</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Android (10 or newer)</h3>
+        <ol class="steps">
+          <li>Download the latest <code>.apk</code> from the <a data-link="releases" href="#">Releases page</a> and open it. Allow installing from your browser or file manager when asked.</li>
+          <li>Turn the scope on: hold its button for 3 seconds.</li>
+          <li>Join its <code>HNDEC-xxxx</code> WiFi (no password). When Android says there's no internet, choose <b>Stay connected</b>.</li>
+          <li>Open the app. It finds the scope by itself.</li>
+        </ol>
+      </div>
+      <div class="card" id="desktop">
+        <h3>Windows, macOS, Linux</h3>
+        <ol class="steps">
+          <li>Install Python 3.8 or newer if you don't have it.</li>
+          <li>Download <a data-link="script" href="#"><code>ne3web.py</code></a> (right-click → Save link as).</li>
+          <li>Join the scope's <code>HNDEC-xxxx</code> WiFi.</li>
+          <li>Run it. A browser tab opens with the picture.</li>
+        </ol>
+        <pre><code>python3 ne3web.py</code></pre>
+        <p class="mut">A plain MJPEG stream for VLC or OBS is at <code>http://localhost:8080/stream.mjpg</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <h2>Privacy</h2>
+    <table>
+      <tr><th>Permissions (Android)</th><td>Network access only: <code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code></td></tr>
+      <tr><th>Talks to</th><td>The scope on its own WiFi, and itself on <code>127.0.0.1</code>. Nothing on the internet.</td></tr>
+      <tr><th>Stores</th><td>Only the snapshots and recordings you choose to save</td></tr>
+      <tr><th>Code</th><td>About 1,250 lines of plain Python you can read, in two files</td></tr>
+    </table>
+    <p class="mut" style="margin-top:14px">The scope's own WiFi has no password, so anyone nearby can connect to it
+      while it's switched on. That's the hardware, not this app.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p>The scope creates its own WiFi network and sends its picture as JPEG images split into small UDP packets.
+      Two protocols are known:</p>
+    <div class="grid">
+      <div class="card"><h3>NE3</h3><p class="mut">The scope sits at <code>192.168.169.1</code>. Each frame arrives with its JPEG header
+        removed, so the app rebuilds it. The tilt reading rides along in the first packet.</p></div>
+      <div class="card"><h3>NE7</h3><p class="mut">The scope sits at <code>192.168.1.1</code> and answers a broadcast "who's there?"
+        message. Frames arrive as whole JPEGs in numbered chunks, with tilt readings on a separate port.</p></div>
+    </div>
+    <p style="margin-top:16px">The app reassembles the frames and shows them in a small web page served from your own device.</p>
+  </div>
+</section>
+
+<section id="safety">
+  <div class="wrap">
+    <div class="note">
+      <h3>Be gentle with your ears</h3>
+      <p style="margin:0">This is a hobby project, not a medical device. Don't push the scope in further than
+        is comfortable, and see a doctor or nurse for pain, discharge, hearing changes, or wax you can't shift safely.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Tmu Ear Violator 4000 Streamer</b> by <span class="author">Matthew Armstrong</span> ·
+      <a data-link="repo" href="#">Source on GitHub</a> ·
+      <a data-link="license" href="#">PolyForm Noncommercial License</a></p>
+    <p>Camera protocols reverse-engineered by the <a href="https://github.com/haxko/NE3-Scope">haxko hackerspace</a>.
+      Android app built with <a href="https://beeware.org">BeeWare</a>.
+      See <a data-link="notices" href="#">third-party notices</a>.</p>
+    <p>Not affiliated with any camera maker, seller or app developer. Product names are used only to describe compatibility.</p>
+  </div>
+</footer>
+
+<script>
+// Work out the GitHub repo from the Pages address (user.github.io/repo),
+// so links keep working if the repo is renamed or forked.
+(function(){
+  var owner = "The-Dorkknight", repo = "ear-violator-4000";
+  var h = location.hostname, seg = location.pathname.split("/").filter(Boolean);
+  if (/\.github\.io$/.test(h)) { owner = h.split(".")[0]; if (seg[0]) repo = seg[0]; }
+  var base = "https://github.com/" + owner + "/" + repo;
+  var links = {
+    repo: base,
+    releases: base + "/releases/latest",
+    script: base + "/raw/main/src/earscope/ne3web.py",
+    license: base + "/blob/main/LICENSE",
+    notices: base + "/blob/main/THIRD_PARTY.md"
+  };
+  document.querySelectorAll("[data-link]").forEach(function(a){
+    var k = a.getAttribute("data-link");
+    if (links[k]) a.href = links[k];
+  });
+})();
+
+// Show the hardware section only if at least one of your photos exists.
+(function(){
+  var sec = document.getElementById("device"), left = 0, shown = 0;
+  var imgs = sec.querySelectorAll("img");
+  left = imgs.length;
+  imgs.forEach(function(img){
+    function done(ok){
+      if (!ok) img.closest("figure").remove(); else shown++;
+      if (--left === 0 && shown) sec.hidden = false;
+    }
+    if (img.complete) done(img.naturalWidth > 0);
+    else { img.addEventListener("load", function(){ done(true); });
+           img.addEventListener("error", function(){ done(false); }); }
+  });
+})();
+</script>
+</body>
+</html>

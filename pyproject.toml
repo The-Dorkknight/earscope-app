@@ -1,0 +1,46 @@
+[tool.briefcase]
+project_name = "Tmu Ear Violator 4000 Streamer"
+bundle = "io.github.the_dorkknight"
+version = "1.0.0"
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE"]
+author = "Matthew Armstrong"
+author_email = "The-Dorkknight@users.noreply.github.com"
+url = "https://github.com/The-Dorkknight/ear-violator-4000"
+
+[tool.briefcase.app.earscope]
+formal_name = "Tmu Ear Violator 4000 Streamer"
+description = "Source-available viewer for HNDEC NE3/NE7 WiFi ear cameras (no vendor app)"
+long_description = """Streams video from cheap HNDEC-xxxx WiFi ear cameras without
+the vendor 'SL ylz' app. No trackers, no analytics, no internet access needed."""
+icon = "icons/earviolator"   # icons/earviolator-{square,round,adaptive}-<size>.png
+sources = ["src/earscope"]
+requires = []   # the streamer itself is pure standard-library Python
+
+# ---------------------------------------------------------------- Android
+[tool.briefcase.app.earscope.android]
+requires = ["toga-android~=0.5.0"]
+base_theme = "Theme.MaterialComponents.DayNight.DarkActionBar"
+# Aluminium-grey bars and the icon's dark green behind the splash/adaptive icon
+primary_color = "#8a9097"
+primary_color_dark = "#5b6167"
+accent_color = "#2fbf6a"
+splash_background_color = "#142812"
+build_gradle_dependencies = ["com.google.android.material:material:1.13.0"]
+# Android 10+: lets us save to the gallery with no storage permission.
+min_os_version = "29"
+# The viewer is served over plain HTTP from 127.0.0.1 inside the app itself.
+android_manifest_application_attrs_extra_content = 'android:usesCleartextTraffic="true"'
+# Permissions: Briefcase only adds INTERNET and ACCESS_NETWORK_STATE by default,
+# and we request nothing else.
+
+# ------------------------------------- Desktop (optional, for `briefcase dev`)
+[tool.briefcase.app.earscope.windows]
+requires = ["toga-winforms~=0.5.0"]
+
+[tool.briefcase.app.earscope.macOS]
+universal_build = true
+requires = ["toga-cocoa~=0.5.0", "std-nslog~=2.0.0"]
+
+[tool.briefcase.app.earscope.linux]
+requires = ["toga-gtk~=0.5.0"]
